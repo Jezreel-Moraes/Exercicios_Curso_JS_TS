@@ -43,7 +43,7 @@ body {
   text-align: justify;
 }
 
-.clock {
+.clock-container {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -51,7 +51,7 @@ body {
   align-items: center;
 }
 
-#clock {
+.clock {
   display: flex;
   justify-content: center;
   margin-bottom: 4rem;
@@ -59,7 +59,7 @@ body {
   font-size: 8.2rem;
 }
 
-.clock > button {
+.clock-container > button {
   width: 25%;
   height: 4rem;
   background-color: var(--primary-color);
@@ -71,15 +71,15 @@ body {
   transition: all 200ms ease-in-out;
 }
 
-.clock > button:hover {
+.clock-container > button:hover {
   background-color: var(--secondary-color);
 }
 
-.clock > button:active {
+.clock-container > button:active {
   transition: all 0ms ease-in-out;
   background-color: var(--tertiary-color);
 }
 
-#clock.stopped {
+.clock.stopped {
   color: var(--stopped-color);
 }

@@ -1,19 +1,19 @@
 function clock() {
-  const clock = document.querySelector("#clock");
+  const clock = document.querySelector(".clock");
+  const stopped = "stopped";
 
   document.addEventListener("click", function (event) {
     const element = event.target;
-    if (!element.hasAttribute("id")) return;
+    if (!element.hasAttribute("class")) return;
 
-    const attribute = element.getAttribute("id");
-
+    const className = element.className;
     const buttonFunctions = {
       start: startClock,
       stop: stopClock,
       reset: resetClock,
     };
 
-    const buttonFunction = buttonFunctions[attribute];
+    const buttonFunction = buttonFunctions[className];
     return buttonFunction ? buttonFunction() : null;
   });
 
@@ -23,7 +23,7 @@ function clock() {
   const timeOut = 10;
 
   function startClock() {
-    clock.className = "";
+    clock.classList.remove(stopped);
     clearInterval(timer);
     timer = setInterval(updateClock, timeOut);
   }
@@ -55,7 +55,7 @@ function clock() {
   };
 
   function stopClock() {
-    clock.className = "stopped";
+    clock.classList.add(stopped);
     stopTimer();
   }
 
@@ -64,7 +64,7 @@ function clock() {
     (milliseconds = 0);
 
   function resetClock() {
-    clock.className = "";
+    clock.classList.remove(stopped);
     stopTimer();
     resetTimer();
     printClock();
