@@ -1,6 +1,8 @@
 :root {
   --primary-color: rgb(19, 56, 124);
   --secondary-color: rgb(24, 83, 192);
+  --tertiary-color: rgb(33, 107, 247);
+
   --white-color: rgb(255, 255, 255);
 
   --stopped-color: rgb(255, 99, 71);
@@ -71,6 +73,11 @@ body {
 
 .clock > button:hover {
   background-color: var(--secondary-color);
+}
+
+.clock > button:active {
+  transition: all 0ms ease-in-out;
+  background-color: var(--tertiary-color);
 }
 
 #clock.stopped {
