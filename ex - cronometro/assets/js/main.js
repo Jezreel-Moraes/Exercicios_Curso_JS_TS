@@ -1,6 +1,10 @@
 function clock() {
   const clock = document.querySelector(".clock");
   const stopped = "stopped";
+  const timeOut = 10;
+
+  let timer;
+  let milliseconds = 0;
 
   document.addEventListener("click", function (event) {
     const element = event.target;
@@ -16,11 +20,6 @@ function clock() {
     const buttonFunction = buttonFunctions[className];
     return buttonFunction ? buttonFunction() : null;
   });
-
-  // let [hours, minutes, seconds, milliseconds] = [0, 0, 0, 0];
-  let timer;
-  let milliseconds = 0;
-  const timeOut = 10;
 
   function startClock() {
     clock.classList.remove(stopped);
@@ -49,8 +48,6 @@ function clock() {
   };
 
   const printClock = () => {
-    // [h, m, s, ms] = [hours, minutes, seconds, milliseconds].map(addZero);
-    // clock.innerText = `${h}:${m}:${s}:${ms}`;
     clock.innerText = createClockWithMilliseconds(milliseconds);
   };
 
@@ -59,9 +56,7 @@ function clock() {
     stopTimer();
   }
 
-  const resetTimer = () =>
-    // ([hours, minutes, seconds, milliseconds] = [0, 0, 0, 0]);
-    (milliseconds = 0);
+  const resetTimer = () => (milliseconds = 0);
 
   function resetClock() {
     clock.classList.remove(stopped);
@@ -70,22 +65,7 @@ function clock() {
     printClock();
   }
 
-  const incrementTime = () => {
-    milliseconds++;
-    // if (milliseconds >= 100) {
-    //   milliseconds = 0;
-    //   seconds++;
-    // }
-    // if (seconds >= 60) {
-    //   seconds = 0;
-    //   minutes++;
-    // }
-    // if (minutes >= 60) {
-    //   minutes = 0;
-    //   hours++;
-    // }
-    // if (hours >= 24) resetTimer();
-  };
+  const incrementTime = () => milliseconds++;
 
   const updateClock = () => {
     incrementTime();
