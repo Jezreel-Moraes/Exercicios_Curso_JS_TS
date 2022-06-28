@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de cadastro</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <section id="container">
+      <h1>Formulário de cadastro</h1>
+      <form action="index.html" method="post" class="form">
+        <div class="input-container">
+          <label for="name" class="label">Nome</label>
+          <input
+            type="text"
+            name="name"
+            class="name validate"
+            id="name"
+            placeholder="Nome"
+          />
+
+          <ul class="error-list"></ul>
+        </div>
+
+        <div class="input-container">
+          <label for="last-name" class="label">Sobrenome</label>
+          <input
+            type="text"
+            name="last-name"
+            class="last-name validate"
+            id="last-name"
+            placeholder="Sobrenome"
+          />
+          <ul class="error-list"></ul>
+        </div>
+
+        <div class="input-container">
+          <label for="cpf" class="label">CPF</label>
+          <input
+            type="text"
+            name="cpf"
+            class="cpf validate"
+            id="cpf"
+            placeholder="CPF"
+          />
+          <ul class="error-list"></ul>
+        </div>
+
+        <div class="input-container">
+          <label for="user" class="label">Usuário</label>
+          <input
+            type="text"
+            name="user"
+            class="user validate"
+            id="user"
+            placeholder="Usuário"
+          />
+          <ul class="error-list"></ul>
+        </div>
+
+        <div class="input-container">
+          <label for="password" class="label">Senha</label>
+          <input
+            type="password"
+            name="password"
+            class="password validate"
+            id="password"
+            placeholder="Senha"
+          />
+          <ul class="error-list"></ul>
+        </div>
+
+        <div class="input-container">
+          <label for="confirm-password" class="label">Confirmar senha</label>
+          <input
+            type="password"
+            name="confirm-password"
+            class="confirm-password validate"
+            id="confirm-password"
+            placeholder="Confirmar senha"
+          />
+          <ul class="error-list"></ul>
+        </div>
+
+        <button class="submit" type="submit">Cadastrar</button>
+      </form>
+    </section>
+    <script src="assets/js/validaCPF.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
