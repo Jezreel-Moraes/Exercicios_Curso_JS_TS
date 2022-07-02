@@ -3,4 +3,4 @@ import "regenerator-runtime/runtime";
 
 import "./assets/css/style.css";
 
-console.log("Compilado!");
+console.log("Compilado banana!");
